@@ -8,7 +8,7 @@ qdarkstyle>=3.0.0
 rembg[gpu,cli]==2.0.60
 onnxruntime==1.23.2  # pinned for stability with rembg
 Pillow>=9.0.0
-numpy==1.26.4
+numpy==2.4.0
 opencv-python>=4.8.0
 
 # Upscaling (Real-ESRGAN dependencies)
