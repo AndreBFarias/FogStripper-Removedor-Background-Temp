@@ -5,7 +5,7 @@ PyQt6_sip==13.10.2
 qdarkstyle>=3.0.0
 
 # Core Processing
-rembg[gpu,cli]==2.0.60
+rembg[gpu,cli]==2.0.72
 onnxruntime==1.23.2  # pinned for stability with rembg
 Pillow>=9.0.0
 numpy==1.26.4
