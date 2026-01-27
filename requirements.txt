@@ -1,7 +1,7 @@
 # GUI
 PyQt6==6.10.0
 PyQt6-Qt6==6.10.0
-PyQt6_sip==13.10.2
+PyQt6_sip==13.11.0
 qdarkstyle>=3.0.0
 
 # Core Processing
