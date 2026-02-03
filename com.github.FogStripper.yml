@@ -28,13 +28,19 @@ modules:
   # 2. Módulo Python principal que constrói o venv unificado
   - name: fogstripper-python-venv
     buildsystem: simple
+    build-options:
+      env:
+        PIP_INDEX_URL: https://download.pytorch.org/whl/cpu
+        PIP_EXTRA_INDEX_URL: https://pypi.org/simple
     build-commands:
       # --- Criação e Instalação do Venv Unificado ---
       - python3 -m venv /app/venv
-      - /app/venv/bin/pip install --no-cache-dir --upgrade pip setuptools wheel
+      - PIP_INDEX_URL=https://pypi.org/simple PIP_EXTRA_INDEX_URL= /app/venv/bin/pip install --no-cache-dir --upgrade pip setuptools wheel
 
       # PyTorch CPU (Flatpak nao tem acesso ao CUDA do host)
-      - /app/venv/bin/pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
+      # PIP_INDEX_URL aponta para whl/cpu, PIP_EXTRA_INDEX_URL para pypi
+      # Isso garante que build isolation do basicsr tambem use torch CPU
+      - /app/venv/bin/pip install --no-cache-dir torch torchvision
 
       # Instalação das dependências gerais
       - /app/venv/bin/pip install --no-cache-dir -r requirements.txt
