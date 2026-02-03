@@ -84,7 +84,7 @@ omit = [
     "src/tests/*",
     "src/main.py",
     "src/gui/*",
-    "src/worker_*.py",
+    "src/workers/worker_*.py",
 ]
 
 [tool.coverage.report]

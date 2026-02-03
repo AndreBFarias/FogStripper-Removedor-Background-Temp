@@ -1,4 +1,4 @@
-.PHONY: help install dev test lint format typecheck security docs docs-serve clean run docker-test docker-lint docker-all health
+.PHONY: help install dev test lint format typecheck security clean run docker-test docker-lint docker-all health
 
 PYTHON := python3
 VENV := venv
@@ -6,7 +6,6 @@ PIP := $(VENV)/bin/pip
 PYTEST := $(VENV)/bin/pytest
 RUFF := $(VENV)/bin/ruff
 MYPY := $(VENV)/bin/mypy
-MKDOCS := $(VENV)/bin/mkdocs
 
 help:
 	@echo "Comandos disponiveis:"
@@ -18,8 +17,6 @@ help:
 	@echo "  make format       - Formata codigo (ruff)"
 	@echo "  make typecheck    - Verifica tipos (mypy)"
 	@echo "  make security     - Verifica seguranca (bandit)"
-	@echo "  make docs         - Build documentacao"
-	@echo "  make docs-serve   - Serve documentacao local"
 	@echo "  make clean        - Limpa arquivos temporarios"
 	@echo "  make run          - Executa aplicacao"
 	@echo "  make health       - Roda health check"
@@ -63,12 +60,6 @@ security:
 check: lint typecheck test
 	@echo "Todos os checks passaram!"
 
-docs:
-	$(MKDOCS) build --strict
-
-docs-serve:
-	$(MKDOCS) serve
-
 clean:
 	rm -rf __pycache__
 	rm -rf .pytest_cache
@@ -95,6 +86,3 @@ docker-lint:
 
 docker-all:
 	docker-compose run --rm all-checks
-
-docker-docs:
-	docker-compose up docs

@@ -54,7 +54,17 @@ dummy_*.svg
 test_venv/
 Luna-main/
 
-# --- Configuracoes de ferramentas externas ---
+# --- Artefatos de Packaging ---
+*.deb
+*.flatpak
+*.AppImage
+build_deb/
+repo/
+build-dir/
 
+# --- Configuracoes de ferramentas externas ---
+venv_requirements-ci/
+CLAUDE.md
+my-mailmap
 Dev_log/
 IMPORTANT.MD
