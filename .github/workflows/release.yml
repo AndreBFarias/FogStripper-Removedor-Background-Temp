@@ -195,7 +195,7 @@ jobs:
           flatpak remote-add --if-not-exists --user flathub https://flathub.org/repo/flathub.flatpakrepo
 
           echo "Installing KDE runtime and SDK..."
-          flatpak install --user -y flathub org.kde.Sdk//6.6 org.kde.Platform//6.6
+          flatpak install --user -y flathub org.kde.Sdk//6.8 org.kde.Platform//6.8
 
           echo "Verifying installations..."
           flatpak list --user

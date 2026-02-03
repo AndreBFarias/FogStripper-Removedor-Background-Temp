@@ -39,8 +39,8 @@ echo ""
 echo "[1/3] Configurando ambiente virtual unificado..."
 # Instalando PyTorch primeiro para garantir binarios
 echo ">> Instalando Core e PyTorch (isso ajuda a evitar compilacao desnecessaria)..."
-"$PYTHON_EXEC" -m pip install --no-cache-dir torch torchvision --extra-index-url https://download.pytorch.org/whl/cu118 || \
-"$PYTHON_EXEC" -m pip install --no-cache-dir torch torchvision --extra-index-url https://download.pytorch.org/whl/cpu
+"$PYTHON_EXEC" -m pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cu118 || \
+"$PYTHON_EXEC" -m pip install --no-cache-dir torch torchvision --index-url https://download.pytorch.org/whl/cpu
 
 echo ""
 echo "[2/3] Instalando demais dependencias (pode demorar um pouco)..."
