@@ -33,8 +33,8 @@ modules:
       - python3 -m venv /app/venv
       - /app/venv/bin/pip install --no-cache-dir --upgrade pip setuptools wheel
 
-      # Instalação do PyTorch CPU (Flatpak geralmente não tem acesso fácil ao CUDA host environment, vamos de CPU safe)
-      - /app/venv/bin/pip install --no-cache-dir --index-url https://download.pytorch.org/whl/cpu torch==1.13.1 torchvision==0.14.1
+      # PyTorch CPU (Flatpak nao tem acesso ao CUDA do host)
+      - /app/venv/bin/pip install --no-cache-dir torch torchvision --extra-index-url https://download.pytorch.org/whl/cpu
 
       # Instalação das dependências gerais
       - /app/venv/bin/pip install --no-cache-dir -r requirements.txt

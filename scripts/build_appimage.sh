@@ -68,8 +68,8 @@ setup_venv() {
     "$PYTHON_EXEC" -m pip install --no-cache-dir --upgrade pip setuptools wheel 2>&1 | tail -1
 
     "$PYTHON_EXEC" -m pip install --no-cache-dir \
-        torch==1.13.1 torchvision==0.14.1 \
-        --index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -1
+        torch torchvision \
+        --extra-index-url https://download.pytorch.org/whl/cpu 2>&1 | tail -1
 
     "$PYTHON_EXEC" -m pip install --no-cache-dir \
         -r "$APP_LIB/requirements.txt" 2>&1 | tail -1
