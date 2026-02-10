@@ -6,7 +6,7 @@ qdarkstyle>=3.0.0
 
 # Core Processing
 rembg[gpu,cli]==2.0.60
-onnxruntime==1.23.2  # pinned for stability with rembg
+onnxruntime==1.24.1  # pinned for stability with rembg
 Pillow>=9.0.0
 numpy==1.26.4
 opencv-python>=4.8.0
